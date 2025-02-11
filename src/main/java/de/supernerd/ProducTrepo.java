@@ -5,10 +5,10 @@ import de.supernerd.shop.Product;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class ProducTrepo {
+public class ProductRepo {
     private ArrayList<Product> products;
 
-    public ProducTrepo() {
+    public ProductRepo() {
         this.products = new ArrayList<>();
     }
 
@@ -59,7 +59,7 @@ public class ProducTrepo {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        ProducTrepo that = (ProducTrepo) o;
+        ProductRepo that = (ProductRepo) o;
         return Objects.equals(products, that.products);
     }
 

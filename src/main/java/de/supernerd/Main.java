@@ -3,6 +3,8 @@ package de.supernerd;
 import de.supernerd.shop.*;
 import de.supernerd.shop.interfaces.OrderRepo;
 
+import java.util.UUID;
+
 public class Main {
     public static void main(String[] args) {
         ProductRepo producTrepo = new ProductRepo();
@@ -17,6 +19,7 @@ public class Main {
         producTrepo.add(product3);
         producTrepo.add(product4);
 
+        //UUID.randomUUID()
         OrderRepo orderListRepo = new OrderListRepo();
         Order order1 = new Order(5546, "12.12.2002", producTrepo.getProducts(), "Ahornweg 1, 5555 Muisterhausen", "Max Mustermann");
         Order order2 = new Order(478, "23.01.2005", producTrepo.getProducts(), "Andreas-Hofer-Straße 6, 44563 München", "Fritzchen");

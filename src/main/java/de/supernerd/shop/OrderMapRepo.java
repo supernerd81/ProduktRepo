@@ -2,13 +2,11 @@ package de.supernerd.shop;
 
 import de.supernerd.shop.interfaces.OrderRepo;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Objects;
+import java.util.*;
 
 public class OrderMapRepo implements OrderRepo {
 
-    HashMap<Integer, Order> orders;
+    Map<Integer, Order> orders;
 
     public OrderMapRepo(HashMap<Integer, Order> orders) {
         this.orders = orders;
@@ -51,7 +49,7 @@ public class OrderMapRepo implements OrderRepo {
         return false;
     }
 
-    public HashMap<Integer, Order> getOrders() {
+    public Map<Integer, Order> getOrders() {
         return orders;
     }
 
