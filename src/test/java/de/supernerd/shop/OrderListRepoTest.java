@@ -115,7 +115,7 @@ public class OrderListRepoTest {
         orderListRepo.add(order3);
         orderListRepo.add(order4);
 
-        Order singleOrderNumber = orderListRepo.geetSingleOrder(order3.orderNumber());
+        Order singleOrderNumber = orderListRepo.getSingle(order3.orderNumber());
 
         Assertions.assertEquals(order3, singleOrderNumber);
     }
@@ -137,7 +137,7 @@ public class OrderListRepoTest {
         orderListRepo.add(order3);
         orderListRepo.add(order4);
 
-        Order singleOrderNumber = orderListRepo.geetSingleOrder(order5.orderNumber());
+        Order singleOrderNumber = orderListRepo.getSingle(order5.orderNumber());
 
         Assertions.assertNull(singleOrderNumber);
     }
@@ -161,11 +161,11 @@ public class OrderListRepoTest {
 
             int expect = 4;
 
-            Assertions.assertEquals(expect, orderListRepo.getAllOrders().size());
+            Assertions.assertEquals(expect, orderListRepo.getAll().size());
     }
 
     @Test
     void getAllProducts_return_ArrayList_is_null_When_empty() {
-        Assertions.assertNull(orderListRepo.getAllOrders());
+        Assertions.assertNull(orderListRepo.getAll());
     }
 }

@@ -1,10 +1,11 @@
 package de.supernerd.shop;
 
+import de.supernerd.shop.interfaces.OrderRepo;
+
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.Objects;
 
-public class OrderListRepo {
+public class OrderListRepo implements OrderRepo {
     private ArrayList<Order> orders;
 
     public OrderListRepo() {
@@ -23,6 +24,7 @@ public class OrderListRepo {
         this.orders = orders;
     }
 
+    @Override
     public void add(Order order) {
         orders.add(order);
     }
@@ -56,7 +58,8 @@ public class OrderListRepo {
         return false;
     }
 
-    public Order geetSingleOrder(int orderNumber) {
+    @Override
+    public Order getSingle(int orderNumber) {
         for(Order order : orders) {
             if(order.orderNumber() == orderNumber) {
                 return order;
@@ -66,7 +69,8 @@ public class OrderListRepo {
         return null;
     }
 
-    public ArrayList<Order> getAllOrders() {
+    @Override
+    public ArrayList<Order> getAll() {
         if(!orders.isEmpty()) {
             return orders;
         }
