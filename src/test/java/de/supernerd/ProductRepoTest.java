@@ -4,9 +4,9 @@ import de.supernerd.shop.Product;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class ProducTrepoTest {
+public class ProductRepoTest {
 
-    ProducTrepo producTrepo = new ProducTrepo();
+    ProductRepo producTrepo = new ProductRepo();
 
     Product product1 = new Product(5546, "HDMI Kabel", "p1.jpg", 12.55);
     Product product2 = new Product(5646, "Grafikkarte", "p2.jpg", 1500.00);
@@ -14,7 +14,7 @@ public class ProducTrepoTest {
     Product product4 = new Product(5334, "Festplatte", "p4.jpg", 150.00);
 
 
-    public ProducTrepoTest() {
+    public ProductRepoTest() {
 
     }
 

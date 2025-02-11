@@ -5,7 +5,7 @@ import de.supernerd.shop.interfaces.OrderRepo;
 
 public class Main {
     public static void main(String[] args) {
-        ProducTrepo producTrepo = new ProducTrepo();
+        ProductRepo producTrepo = new ProductRepo();
 
         Product product1 = new Product(5546, "HDMI Kabel", "p1.jpg", 12.55);
         Product product2 = new Product(5646, "Grafikkarte", "p2.jpg", 1500.00);
