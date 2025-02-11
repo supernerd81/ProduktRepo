@@ -1,6 +1,5 @@
 package de.supernerd.shop;
 
-import de.supernerd.ProducTrepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +7,6 @@ import java.util.ArrayList;
 
 public class OrderListRepoTest {
 
-    ProducTrepo producTrepo = new ProducTrepo();
 
     Product product1 = new Product(5546, "HDMI Kabel", "p1.jpg", 12.55);
     Product product2 = new Product(5646, "Grafikkarte", "p2.jpg", 1500.00);

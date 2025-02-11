@@ -3,6 +3,7 @@ package de.supernerd;
 import de.supernerd.shop.Order;
 import de.supernerd.shop.OrderListRepo;
 import de.supernerd.shop.Product;
+import de.supernerd.shop.ShopService;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,5 +32,12 @@ public class Main {
         orderListRepo.add(order3);
         orderListRepo.add(order4);
         orderListRepo.add(order5);
+
+        ShopService shopService = new ShopService();
+        if(shopService.newOrder(order1)) {
+            System.out.println("Bestellung wurde erfolgreich übermittelt!");
+        } else {
+            System.out.println("Bestellung enthält keine Produkte und konnte deshalb nicht übermittelt werden!");
+        }
     }
 }
