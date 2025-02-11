@@ -1,9 +1,7 @@
 package de.supernerd;
 
-import de.supernerd.shop.Order;
-import de.supernerd.shop.OrderListRepo;
-import de.supernerd.shop.Product;
-import de.supernerd.shop.ShopService;
+import de.supernerd.shop.*;
+import de.supernerd.shop.interfaces.OrderRepo;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +17,7 @@ public class Main {
         producTrepo.add(product3);
         producTrepo.add(product4);
 
-        OrderListRepo orderListRepo = new OrderListRepo();
+        OrderRepo orderListRepo = new OrderListRepo();
         Order order1 = new Order(5546, "12.12.2002", producTrepo.getProducts(), "Ahornweg 1, 5555 Muisterhausen", "Max Mustermann");
         Order order2 = new Order(478, "23.01.2005", producTrepo.getProducts(), "Andreas-Hofer-Straße 6, 44563 München", "Fritzchen");
         Order order3 = new Order(74233, "04.02.2008", producTrepo.getProducts(), "Friedrichstraße 11, 87437 Kempten", "Moritz");
@@ -33,8 +31,17 @@ public class Main {
         orderListRepo.add(order4);
         orderListRepo.add(order5);
 
-        ShopService shopService = new ShopService();
-        if(shopService.newOrder(order1)) {
+        ShopService shopListService = new ShopService(orderListRepo);
+        if(shopListService.newOrder(order1)) {
+            System.out.println("Bestellung wurde erfolgreich übermittelt!");
+        } else {
+            System.out.println("Bestellung enthält keine Produkte und konnte deshalb nicht übermittelt werden!");
+        }
+
+        OrderRepo orderMapRepo = new OrderMapRepo();
+
+        ShopService shopMapService = new ShopService(orderMapRepo);
+        if(shopMapService.newOrder(order1)) {
             System.out.println("Bestellung wurde erfolgreich übermittelt!");
         } else {
             System.out.println("Bestellung enthält keine Produkte und konnte deshalb nicht übermittelt werden!");
