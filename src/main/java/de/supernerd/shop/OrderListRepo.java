@@ -12,7 +12,7 @@ public class OrderListRepo implements OrderRepo {
         orders = new ArrayList<>();
     }
 
-    public OrderListRepo(ArrayList orders) {
+    public OrderListRepo(ArrayList<Order> orders) {
         this.orders = orders;
     }
 
